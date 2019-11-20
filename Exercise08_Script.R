@@ -32,64 +32,20 @@ game_plot <- ggplot(merged, aes(x=time, y=cumulative))
 game_plot+geom_line(aes(color=team))+xlab("Time")+ylab("Cumulative Score")+
   scale_color_manual(values=c("darkgreen", "red"))
 
-#Question 2
-#number game
-#create a vector containing numbers 1 through 100
-numbers <- (1:100)
-#choose the answer to the game
-answer <- sample(numbers, 1)
-#player enters guess
-player_guess <- 50
-player_guess =   
-
-number_result <- readline(prompt = "Guess a number between 1 and 100")
-player_guess <- 0
-answer <- sample(seq(1,100), size=1)
-
-player_guess=number_result
-
-
-number_game <- function(player_guess)
-  
-
-
-
-if(player_guess > answer){
-  print("lower")
-}else if(player_guess < answer){
-  print("higher")
-}else if(player_guess == answer){
-  print("correct!")
-}else{
-  print("Guess again")
-}
-
-number_game <- function(player_guess){
-  if(player_guess > answer){
-    print("lower")
-  }else if(player_guess < answer){
-    print("higher")
-  }else if(player_guess == answer){
-    print("correct!")
+#Question 2: number game
+#run code and enter input values to guess the correct number
+print("Guess a number between 1 and 100")
+answer <- sample(1:100,1)
+for(i in 1:10){
+  input <- as.numeric(readline())
+  if(input > answer){
+    print("Lower")
+  }else if(input < answer){
+    print("Higher")
   }else{
-    print("Guess again")
+    print("Correct!")
   }
 }
-
-
-number_game <- function(player_guess){
-  
-  if(player_guess > answer){
-    print("lower")
-  }else if(player_guess < answer){
-    print("higher")
-  }else if(player_guess == answer){
-    print("correct!")
-  }else{
-    number_game(player_guess)
-  }
-}
-
 
 
 
